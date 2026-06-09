@@ -17,14 +17,22 @@ venvPath = "."
 venv = ".venv"
 typeCheckingMode = "basic"
 pythonVersion = "3.14"
+pythonPath = ["."]
 
 [tool.pytest.ini_options]
-testpaths = ["tests"]
+testpaths = ["algorithms"]
 python_files = ["test_*.py", "*_test.py"]
+norecursedirs = [
+    ".venv",
+    ".git",
+    "__pycache__",
+    ".mypy_cache",
+    ".ruff_cache",
+    ".pytest_cache",
+    "dist",
+    "build",
+    "*.egg-info",
+]
 
 [dependency-groups]
-dev = [
-    "pyright>=1.1.410",
-    "pytest>=9.0.3",
-    "ruff>=0.15.15",
-]
+dev = ["pyright>=1.1.410", "pytest>=9.0.3", "ruff>=0.15.15"]
