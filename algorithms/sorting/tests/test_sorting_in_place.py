@@ -3,9 +3,11 @@ from hypothesis import given
 from hypothesis import strategies as st
 
 from algorithms.sorting.bubble import bubble_sort
+from algorithms.sorting.quick import quick_sort
 
 sort_implementations = [
     pytest.param(bubble_sort, id="bubble_sort"),
+    pytest.param(quick_sort, id="quick_sort"),
 ]
 
 numeric = st.one_of(st.integers(), st.floats(allow_nan=False, allow_infinity=False))
