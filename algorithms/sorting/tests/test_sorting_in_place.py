@@ -2,7 +2,7 @@ import pytest
 from hypothesis import given
 from hypothesis import strategies as st
 
-from algorithms.sorting.bubble_sort import bubble_sort
+from algorithms.sorting.bubble import bubble_sort
 
 sort_implementations = [
     pytest.param(bubble_sort, id="bubble_sort"),
